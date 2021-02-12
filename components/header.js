@@ -1,15 +1,16 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, Icon} from 'react-native';
+// import { Icon } from 'react-native-elements'
+// import Icon from 'react-native-vector-icons/FontAwesome';
 import {Fonts} from '../font'
 
 const styles = StyleSheet.create({
   wrap: {
     padding: 10,
-    backgroundColor:"lightgray"
+    backgroundColor:"#fff"
   },
   titStyle: {
-    textAlign: 'center',
-    fontSize: 32,
+    fontSize: 16,
     fontFamily: Fonts.Regular,
   },
 });

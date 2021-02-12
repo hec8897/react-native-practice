@@ -27,7 +27,8 @@ const App = ()  => {
 
 const styles = StyleSheet.create({
   wrap:{
-    backgroundColor:"#fff"
+    backgroundColor:"lightgray",
+    flex:1
   }
 
 });
