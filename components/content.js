@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import {Image, View, FlatList, StyleSheet, Text} from 'react-native';
 import AppReply from './ItemComponents/AppReply'
+import Style from './CommonStyled'
+
+const {IconStyle,TitleStyle} = Style;
+
 
 const ContentData = [
   {
@@ -22,23 +26,22 @@ const ContentData = [
 const Content = ({DATA}) => {
   return (
     <View style={styles.container}>
-      <View style={styles.TitleStyle}>
-        <View style={styles.TitleStyle}>
+      <TitleStyle >
+        <TitleStyle>
           <View style={styles.ProfileView}></View>
           <View>
             <Text style={{fontSize: 18}}>{DATA.UserID}</Text>
             <Text style={{fontSize: 14}}>경기도 강릉시</Text>
           </View>
-        </View>
-        <Image
+        </TitleStyle>
+        <IconStyle
           style={{
             height: 15,
             width: 15,
-            resizeMode: 'contain',
           }}
           source={require('../assets/icon/item-menu.png')}
         />
-      </View>
+      </TitleStyle>
       <View style={{height: 400}}>
         <Image
           style={{height: '100%', width: '100%', resizeMode: 'cover'}}
@@ -53,21 +56,18 @@ const Content = ({DATA}) => {
           justifyContent: 'space-between',
         }}>
         <View style={{paddingVertical: 15, flexDirection: 'row'}}>
-          <Image
-            style={styles.iconStyle}
+          <IconStyle
             source={require('../assets/icon/header-heart.png')}
           />
-          <Image
-            style={styles.iconStyle}
+          <IconStyle
             source={require('../assets/icon/item-chat.png')}
           />
-          <Image
-            style={styles.iconStyle}
+          <IconStyle
             source={require('../assets/icon/header-next.png')}
           />
         </View>
-        <Image
-          style={{height: 25, width: 25, resizeMode: 'contain'}}
+        <IconStyle
+          style={{marginRight: 0}}
           source={require('../assets/icon/item-bookmark.png')}
         />
       </View>
@@ -114,12 +114,6 @@ const styles = StyleSheet.create({
     padding: 15,
     backgroundColor: '#f9c2ff',
     marginRight: 10,
-  },
-  iconStyle: {
-    height: 25,
-    width: 25,
-    resizeMode: 'contain',
-    marginRight: 20,
   },
 });
 
