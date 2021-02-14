@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Image, View, FlatList, StyleSheet, Text} from 'react-native';
 import AppReply from './ItemComponents/AppReply'
 import Style from './CommonStyled'
+import { Fonts } from '../font';
 
 const {IconStyle,TitleStyle} = Style;
 
@@ -30,8 +31,8 @@ const Content = ({DATA}) => {
         <TitleStyle>
           <View style={styles.ProfileView}></View>
           <View>
-            <Text style={{fontSize: 18}}>{DATA.UserID}</Text>
-            <Text style={{fontSize: 14}}>경기도 강릉시</Text>
+            <Text style={{fontSize: 18},styles.TEXTSTYLE}>{DATA.UserID}</Text>
+            <Text style={{fontSize: 14},styles.TEXTSTYLE}>경기도 강릉시</Text>
           </View>
         </TitleStyle>
         <IconStyle
@@ -96,6 +97,8 @@ class AppFlatList extends Component {
 }
 
 const styles = StyleSheet.create({
+  TEXTSTYLE: {
+  },  
   container: {
     flex: 1,
     width: '100%',

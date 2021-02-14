@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import {Fonts} from '../font';
 
 const Style = {
   IconStyle: styled.Image`
