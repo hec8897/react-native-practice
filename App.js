@@ -1,10 +1,11 @@
 import React from 'react';
-
+// import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
 import {SafeAreaView, StyleSheet, View, StatusBar} from 'react-native';
 import Home from './view/Home';
 import AppHeader from './components/common/Appheader';
 import AppFootNav from './components/common/AppFootNav';
 import AppFlatHeader from './components/common/AppFlatHeader';
+
 
 const LoginInfo = {
   UserID: 'hec8897',
@@ -43,7 +44,7 @@ const App = () => {
         <View style={styles.container}>
           <View>
             <AppHeader LoginInfo={LoginInfo} />
-            <AppFlatHeader FriendInfo={FriendInfo}/>
+            <AppFlatHeader FriendInfo={FriendInfo} />
           </View>
           <Home />
           <AppFootNav />
