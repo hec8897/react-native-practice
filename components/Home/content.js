@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Image, View, FlatList, StyleSheet, Text} from 'react-native';
-import AppReply from './ItemComponents/AppReply'
+import AppReply from './AppReply'
 import Style from './CommonStyled'
-import { Fonts } from '../font';
 
 const {IconStyle,TitleStyle} = Style;
 
@@ -12,14 +11,14 @@ const ContentData = [
     id: '1',
     UserID:"hec8897",
     title: '올 시즌엔 1루수 이대호(39.롯데)를 얼마나 볼 수 있을까. 그 횟수가 늘어날수록 롯데가 승리를 만드는 방정식이 보다 다양해질 수 있다.',
-    Img: require(`../assets/img1.jpg`),
+    Img: require(`../../assets/img1.jpg`),
     reply:'댓글'
   },
   {
     id: '2',
     UserID:"kimdawoon",
     title: 'Second',
-    Img: require(`../assets/img1.jpg`),
+    Img: require(`../../assets/img1.jpg`),
     reply:'123'
   },
 ];
@@ -40,7 +39,7 @@ const Content = ({DATA}) => {
             height: 15,
             width: 15,
           }}
-          source={require('../assets/icon/item-menu.png')}
+          source={require('../../assets/icon/item-menu.png')}
         />
       </TitleStyle>
       <View style={{height: 400}}>
@@ -58,18 +57,18 @@ const Content = ({DATA}) => {
         }}>
         <View style={{paddingVertical: 15, flexDirection: 'row'}}>
           <IconStyle
-            source={require('../assets/icon/header-heart.png')}
+            source={require('../../assets/icon/header-heart.png')}
           />
           <IconStyle
-            source={require('../assets/icon/item-chat.png')}
+            source={require('../../assets/icon/item-chat.png')}
           />
           <IconStyle
-            source={require('../assets/icon/nav-next.png')}
+            source={require('../../assets/icon/nav-next.png')}
           />
         </View>
         <IconStyle
           style={{marginRight: 0}}
-          source={require('../assets/icon/item-bookmark.png')}
+          source={require('../../assets/icon/item-bookmark.png')}
         />
       </View>
 

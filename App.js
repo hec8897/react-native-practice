@@ -1,24 +1,52 @@
 import React from 'react';
 
-import { SafeAreaView, StyleSheet, ScrollView, View, Text, StatusBar } from 'react-native';
-import AppHeader from './components/Appheader';
-import AppFootNav from './components/AppFootNav';
-import AppFlatHeader from './components/AppFlatHeader';
-import Content from './components/content';
+import {SafeAreaView, StyleSheet, View, StatusBar} from 'react-native';
+import Home from './view/Home';
+import AppHeader from './components/common/Appheader';
+import AppFootNav from './components/common/AppFootNav';
+import AppFlatHeader from './components/common/AppFlatHeader';
 
+const LoginInfo = {
+  UserID: 'hec8897',
+};
+const FriendInfo = [
+  {
+    id: '1',
+    title: 'First',
+  },
+  {
+    id: '2',
+    title: 'Second',
+  },
+  {
+    id: '3',
+    title: 'Third',
+  },
+  {
+    id: '4',
+    title: 'Third',
+  },
+  {
+    id: '5',
+    title: 'Third',
+  },
+  {
+    id: '6',
+    title: 'Third',
+  },
+];
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <SafeAreaView style={styles.container}>
-        <View style={styles.wrap}>
+      <SafeAreaView style={{flex: 1}}>
+        <View style={styles.container}>
           <View>
-            <AppHeader />
-            <AppFlatHeader />
+            <AppHeader LoginInfo={LoginInfo} />
+            <AppFlatHeader FriendInfo={FriendInfo}/>
           </View>
-              <Content />
+          <Home />
           <AppFootNav />
-
         </View>
       </SafeAreaView>
     </>
@@ -27,9 +55,6 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-  wrap: {
     backgroundColor: 'lightgray',
     flex: 1,
   },
