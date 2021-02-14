@@ -63,7 +63,7 @@ const Content = ({DATA}) => {
             source={require('../assets/icon/item-chat.png')}
           />
           <IconStyle
-            source={require('../assets/icon/header-next.png')}
+            source={require('../assets/icon/nav-next.png')}
           />
         </View>
         <IconStyle
