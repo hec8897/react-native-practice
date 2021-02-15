@@ -1,63 +1,75 @@
-import React from 'react';
-// import { createStackNavigator, createBottomTabNavigator, createAppContainer } from 'react-navigation';
-import {SafeAreaView, StyleSheet, View, StatusBar} from 'react-native';
+import React, {Component} from 'react';
+import {
+  SafeAreaView,
+  StyleSheet,
+  View,
+  StatusBar,
+  Text,
+  Button,
+} from 'react-native';
 import Home from './view/Home';
 import AppHeader from './components/common/Appheader';
 import AppFootNav from './components/common/AppFootNav';
-import AppFlatHeader from './components/common/AppFlatHeader';
 
+class App extends Component {
+  state = {
+    Page: 'home',
+    LoginInfo: {
+      UserID: 'hec8897',
+    },
+  };
 
-const LoginInfo = {
-  UserID: 'hec8897',
-};
-const FriendInfo = [
-  {
-    id: '1',
-    title: 'First',
-  },
-  {
-    id: '2',
-    title: 'Second',
-  },
-  {
-    id: '3',
-    title: 'Third',
-  },
-  {
-    id: '4',
-    title: 'Third',
-  },
-  {
-    id: '5',
-    title: 'Third',
-  },
-  {
-    id: '6',
-    title: 'Third',
-  },
-];
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <SafeAreaView style={{flex: 1}}>
-        <View style={styles.container}>
-          <View>
+  RouterChanger = (Mode) => {
+    this.setState({
+      Page: Mode,
+    });
+  };
+
+  PageRender = (Page) => {
+    if (Page == 'home') {
+      return <Home />;
+    } else {
+      return <Text>{Page}</Text>;
+    }
+  };
+
+  render() {
+    const {PageRender, RouterChanger} = this;
+    const {Page, LoginInfo} = this.state;
+
+    return (
+      <>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView style={{flex: 1}}>
+          <View style={styles.container}>
             <AppHeader LoginInfo={LoginInfo} />
-            <AppFlatHeader FriendInfo={FriendInfo} />
+            {PageRender(Page)}
+            <Button
+              onPress={()=>RouterChanger('home')}
+              title="홈 라우터 변경 테스트"
+              color="#841584"
+              accessibilityLabel="Mode Test"
+            />
+            <Button
+              onPress={()=>RouterChanger('sub')}
+              title="서브 라우터 변경 테스트"
+              color="#841584"
+              accessibilityLabel="Mode Test"
+            />
+            <AppFootNav />
           </View>
-          <Home />
-          <AppFootNav />
-        </View>
-      </SafeAreaView>
-    </>
-  );
-};
+        </SafeAreaView>
+      </>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'lightgray',
     flex: 1,
+    justifyContent: 'space-between',
+    flexDirection: 'column',
   },
 });
 
