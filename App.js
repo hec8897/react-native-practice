@@ -39,7 +39,7 @@ class App extends Component {
 
     return (
       <>
-        <StatusBar barStyle="dark-content" />
+        <StatusBar barStyle="dark-content" backgroundColor="#fff"/>
         <SafeAreaView style={{flex: 1}}>
           <View style={styles.container}>
             <AppHeader LoginInfo={LoginInfo} />
